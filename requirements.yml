@@ -1,4 +1,4 @@
-name: root
+name: base
 dependencies:
 - affine==2.2.1=py37_0
 - attrs=18.2.0=py37h28b3542_0
