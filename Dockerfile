@@ -29,7 +29,7 @@ RUN conda install affine==2.2.1 attrs=18.2.0 asn1crypto=0.24.0 blas=1.0 \
     python-dateutil=2.7.3 pytz=2018.5 readline=7.0 requests=2.19.1 s3transfer=0.1.13 \
     scipy=1.1.0 scikit-image=0.14.1 setuptools=40.0.0 sip=4.19.8 \
     six=1.11.0 sqlalchemy=1.2.10 sqlite=3.26.0 tk=8.6.8 tornado=5.1 \
-    urllib3=1.23 wheel=0.31.1 xerces-c=3.2.2 xz=5.2.4_4 zlib=1.2.11
+    urllib3=1.23 wheel=0.31.1 xerces-c=3.2.2 zlib=1.2.11 # xz=5.2.4_4
 RUN pip install attrs==18.2.0 cython==0.28.5 mkl-fft==1.0.4 mkl-random==1.0.1 flask-dance sqlalchemy_utils flask_login rasterio fiona
 RUN yum clean all && \
 	  rm -rf /var/cache/yum && \
