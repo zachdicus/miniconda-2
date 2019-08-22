@@ -7,7 +7,7 @@ RUN yum install -y tar bzip2 tix-8.4.3-12.el7.x86_64 texlive-latex* texlive-cm-s
 	  texlive-was texlive-cm texlive-titlesec* texlive-fancyhdr* texlive-xstring* zip && \
     curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /Miniconda3-latest-Linux-x86_64.sh && \
     bash /Miniconda3-latest-Linux-x86_64.sh -p /opt/miniconda -b && \
-    conda install env update -n root --file /etc/requirements.yml && \
+    conda install --file /etc/requirements.yml && \
     yum clean all && \
 	  rm -rf /var/cache/yum && \
 	  conda clean --all --yes && \
