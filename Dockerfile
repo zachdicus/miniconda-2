@@ -2,11 +2,15 @@ from centos:centos7
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/miniconda/bin
 
 COPY requirements.yml /etc/requirements.yml
+
 RUN yum install -y tar bzip2 tix-8.4.3-12.el7.x86_64 texlive-latex* texlive-cm-super* \
 	  texlive-pdfpage* texlive-pdftex* texlive-rotating* texlive-kpathsea* texlive-texconfig* texlive-ec \
 	  texlive-was texlive-cm texlive-titlesec* texlive-fancyhdr* texlive-xstring* zip
+	  
 RUN curl https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o /Miniconda3-latest-Linux-x86_64.sh
+
 RUN bash /Miniconda3-latest-Linux-x86_64.sh -p /opt/miniconda -b
+
 RUN conda install affine==2.2.1 attrs=18.2.0 asn1crypto=0.24.0 blas=1.0 \
     boto3=1.7.62 botocore=1.10.62 bzip2=1.0.6 ca-certificates=2018.03.07 \
     cairo=1.14.12 cartopy=0.16.0 certifi=2018.8.13 cffi=1.11.5 \
@@ -30,7 +34,11 @@ RUN conda install affine==2.2.1 attrs=18.2.0 asn1crypto=0.24.0 blas=1.0 \
     scipy=1.1.0 scikit-image=0.14.1 setuptools=40.0.0 sip=4.19.8 \
     six=1.11.0 sqlalchemy=1.2.10 sqlite=3.26.0 tk=8.6.8 tornado=5.1 \
     urllib3=1.23 wheel=0.31.1 xerces-c=3.2.2 zlib=1.2.11 # xz=5.2.4_4
-RUN pip install attrs==18.2.0 cython==0.28.5 mkl-fft==1.0.4 mkl-random==1.0.1 flask-dance sqlalchemy_utils flask_login rasterio fiona
+    
+RUN pip install attrs==18.2.0 cython==0.28.5 mkl-fft==1.0.4 mkl-random==1.0.1 flask-dance sqlalchemy_utils \
+    flask==1.0.2 rasterio jenkspy==0.1.5 fiona flask-cors flask-admin==1.5.2 flask-sqlalchemy==2.3.2 flask-cors \
+    flask-login==0.4.1 flask-dance==1.1.0
+    
 RUN yum clean all && \
 	  rm -rf /var/cache/yum && \
 	  conda clean --all --yes && \
