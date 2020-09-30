@@ -35,7 +35,7 @@ RUN conda install affine==2.2.1 attrs=18.2.0 asn1crypto=0.24.0 blas=1.0 \
     
 RUN pip install attrs==18.2.0 cython==0.28.5 mkl-fft==1.0.4 mkl-random==1.0.1 sqlalchemy_utils \
     flask==1.0.2 rasterio jenkspy==0.1.5 fiona flask-cors flask-admin==1.5.2 flask-sqlalchemy==2.3.2 flask-cors \
-    flask-login==0.4.1 flask-dance==1.1.0
+    flask-login==0.4.1 flask-dance==1.1.0 geoalchemy2==0.6.3
     
 RUN yum clean all && \
 	  rm -rf /var/cache/yum && \
